@@ -8,26 +8,28 @@
 
 `ssh-copy-id` - util to send pub key to remote host (server)
 
-
-
 ## `config` file
 
-`config` file can simplify establising SSH connection. Especially if you works with many hosts. File is located in user home dircetory: `~/.ssh/config`.
-Useful links:
-
-- [`ssh_config` man page](https://man.openbsd.org/OpenBSD-current/man5/ssh_config.5)
-
-- [Article about config](https://linuxize.com/post/using-the-ssh-config-file/)
+The `config` file can simplify establising SSH connection. Especially if you works with many hosts. User-specific config file is located in home directory: `~/.ssh/config`. Entries can be added via `ssh config` command or by manual editing the file.
 
 Sample config entry
 
 ```
 Host aws.web1
-    HostName 192.168.10.50
+    HostName ec2-38-142-163-234.eu-central-1.compute.amazonaws.com
     User ubuntu
     Port 22
-    IdentityFile ~/.ssh/aws_web1_id_rsa
+    IdentityFile ~/.ssh/aws.web1.pem
 ```
+
+Thanks to configuration to open connection you can just type `ssh aws.web1` instead of `ssh -i ~/.ssh/aws.web1.pem ubuntu@ec2-38-142-163-234.eu-central-1.compute.amazonaws.com`
+
+
+
+Useful links:
+- [`ssh_config` man page](https://man.openbsd.org/OpenBSD-current/man5/ssh_config.5)
+- [Linuxize | Using the SSH Config File](https://linuxize.com/post/using-the-ssh-config-file/)
+
 
 ## Good practices
 
@@ -40,8 +42,8 @@ Host aws.web1
 
 - [SSH Academy](https://www.ssh.com/academy)
 - [SSH Academy - generating key](https://www.ssh.com/academy/ssh/keygen)
-- [SSH Academy - `passpharse`](https://www.ssh.com/academy/ssh/passphrase)
-- [SSH Academy - `ssh-copy-d`](https://www.ssh.com/academy/ssh/copy-id)
+- [SSH Academy - passpharse](https://www.ssh.com/academy/ssh/passphrase)
+- [SSH Academy - ssh-copy-id](https://www.ssh.com/academy/ssh/copy-id)
 
 ## Online tutorials
 
