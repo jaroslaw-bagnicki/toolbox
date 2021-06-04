@@ -1,14 +1,6 @@
 # SSH cheatsheet
 
-## Online tutorials
----
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/hQWRp-FdTpc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/YS5Zh7KExvE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
 ## Command
----
 
 `ssh` - opens secured Shell conection with remote host  
 
@@ -19,7 +11,7 @@
 
 
 ## `config` file
-----
+
 `config` file can simplify establising SSH connection. Especially if you works with many hosts. File is located in user home dircetory: `~/.ssh/config`.
 Useful links:
 
@@ -50,3 +42,9 @@ Host aws.web1
 - [SSH Academy - generating key](https://www.ssh.com/academy/ssh/keygen)
 - [SSH Academy - `passpharse`](https://www.ssh.com/academy/ssh/passphrase)
 - [SSH Academy - `ssh-copy-d`](https://www.ssh.com/academy/ssh/copy-id)
+
+## Online tutorials
+
+[![Traversy Media | SSH Crash Course](https://img.youtube.com/vi/hQWRp-FdTpc/mqdefault.jpg)](https://www.youtube.com/watch?v=hQWRp-FdTpc)
+
+[![LearnLinuxTV | OpenSSH Full Guide](https://img.youtube.com/vi/YS5Zh7KExvE/mqdefault.jpg)](https://www.youtube.com/watch?v=YS5Zh7KExvE)
