@@ -30,7 +30,7 @@ For more detail check [AWS CLI v2 official installation guide](https://docs.aws.
 TODO
 
 ## AWS Regions
-# | Continent | Code | Name | Opt-in Status
+\# | Continent | Code | Name | Opt-in Status
 --- | --- | --- | --- | ---
 1 | Europe | eu-central-1 | Europe (Frankfurt) | Not required
 2 | Europe | eu-west-1 | Europe (Ireland) | Not required
@@ -54,9 +54,10 @@ TODO
 20 | Asia & Pacific | me-south-1 | Middle East (Bahrain) | Required
 21 | Africa | af-south-1 | Africa (Cape Town) | Required
 
-**TODO**  
-[ ] Supplement China and US-Gov regions.  
-[ ] Add info about AZs.
+**TODO** 
+- [ ] Extract list to separete file.
+- [ ] Supplement China and US-Gov regions.  
+- [ ] Add info about AZs.
 
 Source: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-available-regions  
 Regions and Availability Zones: https://aws.amazon.com/about-aws/global-infrastructure/regions_az/
