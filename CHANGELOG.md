@@ -1,4 +1,4 @@
 # Changelog
 
-### 6/4/21
+### 6/6/21
 Added [SSH cheatsheet](cheatsheets/ssh.md)
