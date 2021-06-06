@@ -22,6 +22,11 @@ Verify installation
 aws --version
 ```
 
+It's recommend to enable command completition <sup>[src](https://github.com/aws/aws-cli/tree/v2#command-completion)<sup>
+```
+complete -C aws_completer aws
+```
+
 For more detail check [AWS CLI v2 official installation guide](https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2-linux.html).  
 [AWS CLI v2 Changelog](https://github.com/aws/aws-cli/blob/v2/CHANGELOG.rst).
 
@@ -29,15 +34,15 @@ For more detail check [AWS CLI v2 official installation guide](https://docs.aws.
 ## Credential configuration
 TODO
 
-## AWS Regions
+## AWS Regions <sup>[src](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-available-regions  )<sup>
 \# | Continent | Code | Name | Opt-in Status
 --- | --- | --- | --- | ---
 1 | Europe | eu-central-1 | Europe (Frankfurt) | Not required
 2 | Europe | eu-west-1 | Europe (Ireland) | Not required
 3 | Europe | eu-west-2 | Europe (London) | Not required
-4 | Europe | eu-south-1 | Europe (Milan) | Required
-5 | Europe | eu-west-3 | Europe (Paris) | Not required
-6 | Europe | eu-north-1 | Europe (Stockholm) | Not required
+4 | Europe | eu-west-3 | Europe (Paris) | Not required
+5 | Europe | eu-north-1 | Europe (Stockholm) | Not required
+6 | Europe | eu-south-1 | Europe (Milan) | Required
 7 | North America | us-east-1 | US East (N. Virginia) | Not required
 8 | North America | us-east-2 | US East (Ohio) | Not required
 9 | North America | us-west-1 | US West (N. California) | Not required
@@ -54,10 +59,5 @@ TODO
 20 | Asia & Pacific | me-south-1 | Middle East (Bahrain) | Required
 21 | Africa | af-south-1 | Africa (Cape Town) | Required
 
-**TODO** 
-- [ ] Extract list to separete file.
-- [ ] Supplement China and US-Gov regions.  
-- [ ] Add info about AZs.
 
-Source: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-available-regions  
-Regions and Availability Zones: https://aws.amazon.com/about-aws/global-infrastructure/regions_az/
+Note: You can also get available regions list by AWS CLI typing: `aws ec2 describe-regions --all-regions`
