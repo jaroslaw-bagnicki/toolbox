@@ -42,13 +42,13 @@ AWS CLI prompts you for input:
 - Access key ID
 - Secret access key
 - [AWS Region](aws-regions.md) (e.g. `eu-central-1`)
-- Default output format (`json` | `yaml` | `yaml-stream` | `text` | `table` <sup>[src](https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-output-format.html)</sup>)
+- Default output format (`json` | `yaml` | `yaml-stream` | `text` | `table` <sup>[more](https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-output-format.html)</sup>)
 
 If you not done it yet, AWS access keys can be generated on user profile in **IAM Management Console**:
 ![IAM Management Console](https://i.imgur.com/MF6Bm4N.png)
 
 ### Using more than on credentials
-If you want plan deal with more than one configure set use named profiles.<sup>[src](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-profiles.html)</sup>
+If you want plan deal with more than one configure set use named profiles.<sup>[more](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-profiles.html)</sup>
 ```
 aws configure --profile <profile-name>
 ```
@@ -68,7 +68,7 @@ aws configure list
 ### Updating configuration 
 To update default/profile configuration use `aws configure` like for configuration setup or use `aws set` to update paricular settings:
 ```
-aws set region us-east-1 --profile jbagnicki
+aws set region us-east-1 --profile <profile-name>
 ```
 
 ### Deleting configuration
