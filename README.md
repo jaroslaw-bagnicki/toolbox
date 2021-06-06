@@ -3,3 +3,4 @@ My personal place to store cheatsheets, scripts, snippets, and other kinds of co
 
 ## Cheatsheets
 1. [SSH](cheatsheets/ssh.md)
+2. [AWS CLI](cheatsheets/aws-cli.md)
