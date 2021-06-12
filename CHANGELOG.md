@@ -1,5 +1,7 @@
 # Changelog
 
+### 6/9/21
+Added cheatsheet: [AWS Tools for Powershell - Temporaty credentials](cheatsheets/aws/tools-for-pwsh/aws-sts-token.md)
 ### 6/6/21
 Added:
 - [AWS CLI cheatsheet](cheatsheets/aws/aws-cli.md)
