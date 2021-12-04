@@ -24,22 +24,24 @@ Host aws.web1
 
 Thanks to configuration to open connection you can just type `ssh aws.web1` instead of `ssh -i ~/.ssh/aws.web1.pem ubuntu@ec2-38-142-163-234.eu-central-1.compute.amazonaws.com`
 
-## Get key fingerprint
-
-```
-# BASE64 fingerprint
-ssh-keygen -lf acg-awsdev.pem
-# example output: 2048 SHA256:Khbcnwrf+R6SPE/Vf2HpPRjPVirvCqrmAdLgN3bVt9Y no comment (RSA)
-
-# MD5 fingerprint
-ssh-keygen -lf acg-awsdev.pem
-# example output:2048 MD5:5b:ba:21:e4:65:d9:20:51:48:ae:77:97:69:f9:f4:1b no comment (RSA)
-```
-
 Useful links:
 - [`ssh_config` man page](https://man.openbsd.org/OpenBSD-current/man5/ssh_config.5)
 - [Linuxize | Using the SSH Config File](https://linuxize.com/post/using-the-ssh-config-file/)
 
+
+## Get key fingerprint
+
+SHA256 fingerprint
+```
+ssh-keygen -lf acg-awsdev.pem
+# example output: 2048 SHA256:Khbcnwrf+R6SPE/Vf2HpPRjPVirvCqrmAdLgN3bVt9Y no comment (RSA)
+```
+
+MD5 fingerprint
+```
+ssh-keygen -E md5 -lf acg-awsdev.pem
+# example output:2048 MD5:5b:ba:21:e4:65:d9:20:51:48:ae:77:97:69:f9:f4:1b no comment (RSA)
+```
 
 ## Good practices
 
