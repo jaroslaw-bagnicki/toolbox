@@ -8,6 +8,22 @@
 
 `ssh-copy-id` - util to send pub key to remote host (server)
 
+
+## Connecting to remote host
+```bash
+ssh -i path-to-private-key username@host
+
+# e.g.
+ssh -i ~/.ssh/azure-vm.pem azureuser@123.45.67.89
+```
+The host could be either host IP or host domain.
+
+## Generating new keypair
+```bash
+ssh-keygen -t ed25519 -f ~/.ssh/key-name
+
+```
+
 ## `config` file
 
 The `config` file can simplify establising SSH connection. Especially if you works with many hosts. User-specific config file is located in home directory: `~/.ssh/config`. Entries can be added via `ssh config` command or by manual editing the file.
@@ -27,6 +43,20 @@ Thanks to configuration to open connection you can just type `ssh aws.web1` inst
 Useful links:
 - [`ssh_config` man page](https://man.openbsd.org/OpenBSD-current/man5/ssh_config.5)
 - [Linuxize | Using the SSH Config File](https://linuxize.com/post/using-the-ssh-config-file/)
+
+
+## Using `ssh-agent`
+
+```bash
+# Start ssh-agent for a terminal session
+eval $(ssh-agent)
+
+# Add publish
+ssh-add ~/.ssh/my-private-key
+
+# List identities
+ssh-add -l
+```
 
 
 ## Get key fingerprint
