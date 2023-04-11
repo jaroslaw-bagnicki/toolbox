@@ -34,14 +34,13 @@ do {
     $playlistItemsResult = ConvertFrom-Json $playlistItemsResponse.Content
     $playlistItemsPageToken = $playlistItemsResult.NextPageToken
 
-    $videoIds = $playlistItemsResult.Items.Snippet.ResourceId.VideoId
     # https://developers.google.com/youtube/v3/docs/videos/list
     $videosRequest = @{
         Method = "GET"
         Uri = "$apiUrl/videos"
         Body = @{
             key = $apiKey
-            id = $videoIds -join ","
+            id = $playlistItemsResult.Items.Snippet.ResourceId.VideoId -join ","
             part = "contentDetails"
             maxResults = 50
         }
