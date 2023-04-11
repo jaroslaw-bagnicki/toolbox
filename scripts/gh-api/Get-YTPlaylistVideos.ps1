@@ -70,6 +70,5 @@ do {
     }
 } while ($null -ne $playlistItemsPageToken)
 
-$output | ft
-
+Write-Output $output
 
