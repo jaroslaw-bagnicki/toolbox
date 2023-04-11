@@ -5,7 +5,8 @@ param(
 
 $ErrorActionPreference = "Stop"
 
-$config = Import-PowerShellDataFile -Path (Join-Path $PSScriptRoot ".\config.psd1")
+$apiUrl = "https://www.googleapis.com/youtube/v3"
+$apiKey = Get-Content -Path ".\apiKey"
 
 $playlistItemsPageToken = $null
 $output = @()
@@ -13,9 +14,9 @@ do {
     # https://developers.google.com/youtube/v3/docs/playlistItems/list
     $playlistItemsRequest = @{
         Method = "GET"
-        Uri = "$($config.ApiUrl)/playlistItems"
+        Uri = "$apiUrl/playlistItems"
         Body = @{
-            key = $config.ApiKey
+            key = $apiKey
             playlistId = $PlaylistId
             part = "snippet"
             maxResults = 50
@@ -37,9 +38,9 @@ do {
     # https://developers.google.com/youtube/v3/docs/videos/list
     $videosRequest = @{
         Method = "GET"
-        Uri = "$($config.ApiUrl)/videos"
+        Uri = "$apiUrl/videos"
         Body = @{
-            key = $config.ApiKey
+            key = $apiKey
             id = $videoIds -join ","
             part = "contentDetails"
             maxResults = 50
