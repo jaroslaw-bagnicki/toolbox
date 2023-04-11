@@ -3,27 +3,34 @@ $config = Import-PowerShellDataFile -Path (Join-Path $PSScriptRoot ".\config.psd
 $playlistId = "PLxfrSxK7P38X7XfG4X8Y9cdOURvC7ObMF"
 
 # https://developers.google.com/youtube/v3/docs/playlistItems/list
-# GET https://youtube.googleapis.com/youtube/v3/playlistItems?part=snippet%2CcontentDetails&maxResults=25&playlistId=PLxfrSxK7P38X7XfG4X8Y9cdOURvC7ObMF&key=[YOUR_API_KEY] HTTP/1.1
 $request = @{
     Method = "GET"
     Uri = "$($config.ApiUrl)/playlistItems"
     Body = @{
         key = $config.ApiKey
         playlistId = $playlistId
-        part = "snippet"
+        part = "snippet,contentDetails"
         maxResults = 50
+        pageToken = $null
     }
 }
 
-$response = Invoke-WebRequest @request
+$items = @()
+do {
+    $response = Invoke-WebRequest @request
 
-if ($response.StatusCode -ge 400) {
-    Write-Error $response.Content
-    exit -1
-}
+    if ($response.StatusCode -ge 400) {
+        Write-Error $response.Content
+        exit -1
+    }
 
-$result = ConvertFrom-Json $response.Content
-$result.Items
+    $result = ConvertFrom-Json $response.Content
+    $request.Body.pageToken = $result.NextPageToken
+    $items += $result.Items
+} while ($null -ne $result.NextPageToken)
+
+$items
+
 
 
 
