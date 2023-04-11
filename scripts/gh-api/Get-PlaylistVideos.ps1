@@ -64,7 +64,7 @@ do {
             VideoId = $videoId
             Position = $playlistItem.Position
             Title = $playlistItem.Title
-            Duration = [System.Xml.XmlConvert]::ToTimeSpan($videoDetails.ContentDetails.Duration)
+            Duration = [System.Xml.XmlConvert]::ToTimeSpan($videoDetails.ContentDetails.Duration) # Workaround for parsing ISO-8601 timespan format e.g. PT10M45S -> 0:10:45
         }
         $output += $entry
     }
