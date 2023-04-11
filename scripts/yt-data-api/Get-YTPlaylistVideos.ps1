@@ -6,7 +6,7 @@ param(
 $ErrorActionPreference = "Stop"
 
 $apiUrl = "https://www.googleapis.com/youtube/v3"
-$apiKey = Get-Content -Path ".\apiKey"
+$apiKey = Get-Content -Path (Join-Path $PSScriptRoot .\apiKey)
 
 $playlistItemsPageToken = $null
 $output = @()
